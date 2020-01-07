@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Biblioteca{% endblock %}
+
+{% block body %}
+    <h1>Biblioteca</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ biblioteca.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ biblioteca.nombre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('biblioteca_index') }}">back to list</a>
+
+    <a href="{{ path('biblioteca_edit', {'id': biblioteca.id}) }}">edit</a>
+
+    {{ include('biblioteca/_delete_form.html.twig') }}
+{% endblock %}

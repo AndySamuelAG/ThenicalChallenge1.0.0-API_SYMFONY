@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Biblioteca index{% endblock %}
+
+{% block body %}
+    <h1>Biblioteca index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for biblioteca in bibliotecas %}
+            <tr>
+                <td>{{ biblioteca.id }}</td>
+                <td>{{ biblioteca.nombre }}</td>
+                <td>
+                    <a href="{{ path('biblioteca_show', {'id': biblioteca.id}) }}">show</a>
+                    <a href="{{ path('biblioteca_edit', {'id': biblioteca.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('biblioteca_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Biblioteca{% endblock %}
+
+{% block body %}
+    <h1>Create new Biblioteca</h1>
+
+    {{ include('biblioteca/_form.html.twig') }}
+
+    <a href="{{ path('biblioteca_index') }}">back to list</a>
+{% endblock %}

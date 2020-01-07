@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Prestamo{% endblock %}
+
+{% block body %}
+    <h1>Prestamo</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ prestamo.id }}</td>
+            </tr>
+            <tr>
+                <th>Prestamo</th>
+                <td>{{ prestamo.prestamo }}</td>
+            </tr>
+            <tr>
+                <th>Entregado</th>
+                <td>{{ prestamo.entregado ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('prestamo_index') }}">back to list</a>
+
+    <a href="{{ path('prestamo_edit', {'id': prestamo.id}) }}">edit</a>
+
+    {{ include('prestamo/_delete_form.html.twig') }}
+{% endblock %}

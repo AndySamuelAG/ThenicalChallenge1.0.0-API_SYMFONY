@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Biblioteca{% endblock %}
+
+{% block body %}
+    <h1>Edit Biblioteca</h1>
+
+    {{ include('biblioteca/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('biblioteca_index') }}">back to list</a>
+
+    {{ include('biblioteca/_delete_form.html.twig') }}
+{% endblock %}
